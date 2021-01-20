@@ -40,3 +40,40 @@ function fn3(): void {
 function fn31(): never {
   throw new Error('报错了！')
 }
+
+/**
+ * 数组的类型声明
+ *   类型[]
+ *   Array<类型>
+ */
+let e4: string[];
+e4 = ['abc', 'bnc', 'sdfdf']
+let f4: Array<number>;
+f4 = [23, 34, 45]
+
+// tuple元组， 是长度固定的数组
+// [类型, 类型, ...]
+let h4: [string, number]
+h4 = ['abc', 123]
+
+// enum 枚举
+enum Gander {
+  Male = 1,
+  Female = 2
+}
+let i4: { name: string, gander: Gander }
+i4 = {
+  name: 'jack',
+  gander: Gander.Male
+}
+
+// & 表示同时
+let j4: { name: string } & { age: number }
+j4 = { name: 'jack', age: 23 }
+
+// 类型别名
+type myType = 1 | 2 | 3 | 4 | 5;
+let k4: myType;
+let l4: myType;
+k4 = 3;
+l4 = 2;
